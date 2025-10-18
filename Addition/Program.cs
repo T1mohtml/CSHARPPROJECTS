@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 class Program
 {
@@ -6,33 +7,28 @@ class Program
     {
         while (true)
         {
-            // Write a line
             Console.WriteLine("=== Simple Addition Calculator ===");
 
-            // Get first number
-            Console.Write("Enter the first number:  ");
-            string input1 = Console.ReadLine();
-            double num1 = Convert.ToDouble(input1);
+            Console.Write("Enter the first number: ");
+            double num1 = Convert.ToDouble(Console.ReadLine());
 
-            // Get second number
             Console.Write("Enter the second number: ");
-            string input2 = Console.ReadLine();
-            double num2 = Convert.ToDouble(input2);
+            double num2 = Convert.ToDouble(Console.ReadLine());
 
-            // Calculate and display result
             double result = num1 + num2;
             Console.WriteLine($"Result: {num1} + {num2} = {result}");
 
-            // Prompt user
-            Console.WriteLine("Press Enter  to continue, or any other key to quit...");
-            var key = Console.ReadKey(true); // true hides the key from console
-
-            if (key.Key != ConsoleKey.Enter)
+            if (result == 67)
             {
-                break; // Exit loop if not Enter
+                // Play WAV or MP3 using macOS 'afplay'
+                Process.Start("afplay", "./67.wav"); // or "./67.mp3"
             }
 
-            Console.Clear(); // Clear screen for next calculation
+            Console.WriteLine("Press Enter to continue, or any other key to quit...");
+            var key = Console.ReadKey(true);
+            if (key.Key != ConsoleKey.Enter) break;
+
+            Console.Clear();
         }
     }
 }
