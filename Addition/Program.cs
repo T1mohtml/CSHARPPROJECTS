@@ -24,7 +24,7 @@ class Program
             Console.WriteLine($"Result: {num1} + {num2} = {result}");
 
             // Prompt user
-            Console.WriteLine("Press Enter to continue, or any other key to quit...");
+            Console.WriteLine("Press Enter  to continue, or any other key to quit...");
             var key = Console.ReadKey(true); // true hides the key from console
 
             if (key.Key != ConsoleKey.Enter)
